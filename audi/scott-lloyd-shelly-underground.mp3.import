@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/scott-lloyd-shelly-underground.mp3-322f0eded1756c34760879f0a83fcac2.mp3str"
+
+[deps]
+
+source_file="res://audi/scott-lloyd-shelly-underground.mp3"
+dest_files=[ "res://.import/scott-lloyd-shelly-underground.mp3-322f0eded1756c34760879f0a83fcac2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=1.0

@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fon/middle.png" type="Texture" id=1]
+[ext_resource path="res://fon/back.png" type="Texture" id=2]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1490, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer2"]
+position = Vector2( -53.6063, -705.531 )
+scale = Vector2( 1.94649, 2.0813 )
+texture = ExtResource( 2 )
+centered = false
+flip_h = true
+
+[node name="Sprite2" type="Sprite" parent="ParallaxLayer2"]
+position = Vector2( 693.299, -705.531 )
+scale = Vector2( 1.94649, 2.0813 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1490, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( -53.6063, -470.334 )
+scale = Vector2( 1.94649, 2.0813 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 693.299, -470.334 )
+scale = Vector2( 1.94649, 2.0813 )
+texture = ExtResource( 2 )
+centered = false
+flip_h = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_offset = Vector2( 1, 1 )
+motion_mirroring = Vector2( 690, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer3"]
+position = Vector2( 386.393, 94.8465 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -91.1107, -198 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxLayer3/Sprite"]
+position = Vector2( -244.135, -149.839 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 328.139, -48.5082 )
+flip_h = true
+
+[node name="Sprite4" type="Sprite" parent="ParallaxLayer3/Sprite"]
+position = Vector2( -592.528, -148.504 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 328.139, -48.5082 )
+flip_h = true
+
+[node name="Sprite5" type="Sprite" parent="ParallaxLayer3/Sprite"]
+position = Vector2( -766.057, -149.839 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 328.139, -48.5082 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+visible = false
+motion_offset = Vector2( 1, 1 )
+motion_mirroring = Vector2( 350, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer4"]
+position = Vector2( -304.488, 99.325 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -91.1107, -198 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxLayer4/Sprite"]
+position = Vector2( -244.135, -149.839 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 328.139, -48.5082 )
+flip_h = true

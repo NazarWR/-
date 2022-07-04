@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Atlas/atlas-props.png" type="Texture" id=1]
+[ext_resource path="res://Atlas/upJi1Y.png" type="Texture" id=2]
+[ext_resource path="res://script/Box.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 26, 37, 16, 17 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29.1622, 29.8508 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 274, 81, 71, 73 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 49.9597, 21.7977 )
+
+[node name="Box" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 82.4221, 69.7202 )
+scale = Vector2( 3.64354, 3.787 )
+texture = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 82.5944, 67.8823 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 134.35, -45.2548 )
+gravity_point = true
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+visible = false
+position = Vector2( -49.6749, 50.0826 )
+scale = Vector2( 0.49502, 0.414527 )
+texture = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -50.404, 120.838 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

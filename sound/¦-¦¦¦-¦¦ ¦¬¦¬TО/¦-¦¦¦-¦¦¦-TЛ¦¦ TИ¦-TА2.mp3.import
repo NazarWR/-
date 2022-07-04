@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/огненый шар2.mp3-c65adcdd0bf634ad38fa5d283aaf54c7.mp3str"
+
+[deps]
+
+source_file="res://sound/огне плю/огненый шар2.mp3"
+dest_files=[ "res://.import/огненый шар2.mp3-c65adcdd0bf634ad38fa5d283aaf54c7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=1.0

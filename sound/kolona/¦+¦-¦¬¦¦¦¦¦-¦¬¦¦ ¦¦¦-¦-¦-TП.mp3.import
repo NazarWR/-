@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/движение камня.mp3-d43173be568ade0239daa74dbb87d761.mp3str"
+
+[deps]
+
+source_file="res://sound/kolona/движение камня.mp3"
+dest_files=[ "res://.import/движение камня.mp3-d43173be568ade0239daa74dbb87d761.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=1.0

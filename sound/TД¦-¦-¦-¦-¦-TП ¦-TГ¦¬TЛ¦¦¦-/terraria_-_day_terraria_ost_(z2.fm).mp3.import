@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/terraria_-_day_terraria_ost_(z2.fm).mp3-d0601a3cda98df47a8f7705651e05792.mp3str"
+
+[deps]
+
+source_file="res://sound/фонавая музыка/terraria_-_day_terraria_ost_(z2.fm).mp3"
+dest_files=[ "res://.import/terraria_-_day_terraria_ost_(z2.fm).mp3-d0601a3cda98df47a8f7705651e05792.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=1.0

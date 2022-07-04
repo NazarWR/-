@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/медленая ходьба по траве.mp3-6e62642965f791c7fda9e49b4e50acc1.mp3str"
+
+[deps]
+
+source_file="res://sound/медленая ходьба по траве.mp3"
+dest_files=[ "res://.import/медленая ходьба по траве.mp3-6e62642965f791c7fda9e49b4e50acc1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,98 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://animatet/idle/player-idle-1.png" type="Texture" id=1]
+[ext_resource path="res://animatet/idle/player-idle-2.png" type="Texture" id=2]
+[ext_resource path="res://animatet/jump/player-jump-2.png" type="Texture" id=3]
+[ext_resource path="res://animatet/dead/player-hurt-1.png" type="Texture" id=4]
+[ext_resource path="res://animatet/run/player-run-1.png" type="Texture" id=5]
+[ext_resource path="res://animatet/run/player-run-3.png" type="Texture" id=6]
+[ext_resource path="res://animatet/run/player-run-6.png" type="Texture" id=7]
+[ext_resource path="res://animatet/jump/player-jump-1.png" type="Texture" id=8]
+[ext_resource path="res://animatet/idle/player-idle-3.png" type="Texture" id=9]
+[ext_resource path="res://animatet/run/player-run-2.png" type="Texture" id=10]
+[ext_resource path="res://animatet/idle/player-idle-4.png" type="Texture" id=11]
+[ext_resource path="res://animatet/run/player-run-5.png" type="Texture" id=12]
+[ext_resource path="res://animatet/run/player-run-4.png" type="Texture" id=13]
+[ext_resource path="res://animatet/dead/player-hurt-2.png" type="Texture" id=14]
+[ext_resource path="res://plaier.gd" type="Script" id=15]
+[ext_resource path="res://sound/прыжок на траву.mp3" type="AudioStream" id=16]
+[ext_resource path="res://sound/лиса/звук боли2,2.mp3" type="AudioStream" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "fall",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "jump2",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.18988, 10 )
+
+[node name="plaier" type="KinematicBody2D"]
+collision_layer = 524289
+script = ExtResource( 15 )
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2( 5, 5 )
+
+[node name="animeit" type="AnimatedSprite" parent="."]
+position = Vector2( 1.05947, -0.529739 )
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.56269, 5.79815 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0.264862, 1.85405 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+use_parent_material = true
+scale = Vector2( 5, 5 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="grass" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+volume_db = -2.805
+bus = "New Bus Copy"
+
+[node name="die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+mix_target = 1
+bus = "New Bus"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="grass" to="." method="_on_grass_finished"]

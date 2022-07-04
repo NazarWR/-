@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/прыжок на траву.mp3-5c7396a5dd844f75d77bebe798f76c62.mp3str"
+
+[deps]
+
+source_file="res://sound/прыжок на траву.mp3"
+dest_files=[ "res://.import/прыжок на траву.mp3-5c7396a5dd844f75d77bebe798f76c62.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

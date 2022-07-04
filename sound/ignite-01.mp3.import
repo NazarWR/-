@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ignite-01.mp3-a9bae98526c762d55591be52e194d2cb.mp3str"
+
+[deps]
+
+source_file="res://sound/ignite-01.mp3"
+dest_files=[ "res://.import/ignite-01.mp3-a9bae98526c762d55591be52e194d2cb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

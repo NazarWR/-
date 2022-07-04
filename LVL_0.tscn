@@ -1,0 +1,117 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://scenes/orex.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Node2D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Bird.tscn" type="PackedScene" id=5]
+[ext_resource path="res://plaier.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Box.tscn" type="PackedScene" id=8]
+[ext_resource path="res://igoda.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Control.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/next_lvl.tscn" type="PackedScene" id=11]
+[ext_resource path="res://LVL1.gd" type="Script" id=12]
+[ext_resource path="res://fon/middle.png" type="Texture" id=13]
+[ext_resource path="res://fon/back.png" type="Texture" id=14]
+[ext_resource path="res://scenes/рычаг.tscn" type="PackedScene" id=15]
+[ext_resource path="res://ParallaxBackgroundfon.tscn" type="PackedScene" id=16]
+[ext_resource path="res://kolona.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/orex_fier.tscn" type="PackedScene" id=18]
+[ext_resource path="res://sound/фонавая музыка/terraria_-_day_terraria_ost_(z2.fm).mp3" type="AudioStream" id=19]
+
+[node name="LVL_0" type="Node2D"]
+position = Vector2( 1, 0 )
+script = ExtResource( 12 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource( 16 )]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 0.25, 1 )
+motion_mirroring = Vector2( 1800, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -55, -272 )
+scale = Vector2( 4.77509, 1.61124 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 0.25, 1 )
+motion_mirroring = Vector2( 175, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -121.927, -98.9562 )
+scale = Vector2( 0.989592, 1 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="plaier" parent="." instance=ExtResource( 6 )]
+position = Vector2( 941.657, -99.782 )
+
+[node name="Box" parent="." instance=ExtResource( 8 )]
+position = Vector2( 234.653, -6.12454 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 25.0489, 280.62 )
+tile_data = PoolIntArray( -2555865, 0, 0, -2490331, 0, 0, -2424797, 0, 0, -2359263, 0, 0, -2293729, 0, 0, -2228195, 0, 0, -2162661, 0, 0, -2097127, 0, 0, -2031593, 0, 0, -1966059, 0, 0, -1900525, 0, 0, -1834991, 0, 0, -1769457, 0, 0, -1703923, 0, 0, -1638389, 0, 0, -1572855, 0, 0, -1507321, 0, 0, -1441787, 0, 0, -1441757, 1, 0, -1441747, 1, 0, -1441743, 1, 0, -1376253, 0, 0, -1376251, 1, 0, -1376250, 1, 0, -1376249, 1, 0, -1376248, 1, 0, -1376247, 1, 0, -1376246, 1, 0, -1376245, 1, 0, -1376244, 1, 0, -1376243, 1, 0, -1376242, 1, 0, -1376241, 1, 0, -1376240, 1, 0, -1376239, 1, 0, -1376238, 1, 0, -1376237, 1, 0, -1376236, 1, 0, -1376235, 1, 0, -1376234, 1, 0, -1376233, 1, 0, -1376232, 1, 0, -1376231, 1, 0, -1376230, 1, 0, -1376229, 1, 0, -1376228, 1, 0, -1376227, 1, 0, -1376226, 1, 0, -1376225, 1, 0, -1376224, 1, 0, -1376223, 1, 0, -1376222, 1, 0, -1376221, 1, 0, -1376220, 1, 0, -1376219, 1, 0, -1376218, 1, 0, -1376217, 1, 0, -1376216, 1, 0, -1376215, 1, 0, -1376214, 1, 0, -1376213, 1, 0, -1376212, 1, 0, -1376211, 1, 0, -1376210, 1, 0, -1376209, 1, 0, -1376208, 1, 0, -1376207, 1, 0, -1376206, 1, 0, -1376205, 1, 0, -1376204, 1, 0, -1376203, 1, 0, -1376202, 1, 0, -1376201, 1, 0, -1376200, 1, 0, -1376199, 1, 0, -1376198, 1, 0, -1376197, 1, 0, -1376196, 1, 0, -1376195, 1, 0, -1376194, 1, 0, -1376193, 1, 0, -1376192, 1, 0, -1376191, 1, 0, -1376190, 1, 0, -1376189, 1, 0, -1376188, 1, 0, -1376187, 1, 0, -1376184, 1, 0, -1376183, 1, 0, -1376182, 1, 0, -1376181, 1, 0, -1376180, 1, 0, -1376179, 1, 0, -1376178, 1, 0, -1376177, 1, 0, -1376176, 1, 0, -1376175, 1, 0, -1376174, 1, 0, -1376173, 1, 0, -1376172, 1, 0, -1310719, 0, 0, -1310715, 1, 0, -1310680, 1, 0, -1310679, 1, 0, -1310657, 1, 0, -1310656, 1, 0, -1310655, 1, 0, -1310654, 1, 0, -1310653, 1, 0, -1310652, 1, 0, -1310651, 1, 0, -1310650, 1, 0, -1310649, 1, 0, -1179695, 1, 0, -1179694, 1, 0, -1179693, 1, 0, -1179692, 1, 0, -1179691, 1, 0, -1179690, 1, 0, -1179689, 1, 0, -1179688, 1, 0, -1179687, 1, 0, -1179686, 1, 0, -1179685, 1, 0, -1179684, 1, 0, -1179683, 1, 0, -1179682, 1, 0, -1179681, 1, 0, -1179680, 1, 0, -1179679, 1, 0, -1179678, 1, 0, -1179677, 1, 0, -1179676, 1, 0, -1179675, 1, 0, -1179674, 1, 0, -1179673, 1, 0, -1179672, 1, 0, -1179671, 1, 0, -1179670, 4, 0, -1179649, 0, 0, -1245179, 1, 0, -1245144, 1, 0, -1245143, 1, 0, -1114135, 1, 0, -1114132, 1, 0, -1114115, 0, 0, -1179643, 1, 0, -1179607, 1, 0, -1048599, 1, 0, -1048595, 1, 0, -1048581, 0, 0, -1114071, 1, 0, -983063, 1, 0, -983062, 1, 0, -983061, 1, 0, -983060, 1, 0, -983059, 1, 0, -983058, 1, 0, -983057, 1, 0, -983056, 1, 0, -983055, 1, 0, -983054, 1, 0, -983053, 1, 0, -983052, 1, 0, -983051, 4, 0, -1048535, 1, 0, -917527, 1, 0, -917513, 4, 0, -983008, 1, 0, -982999, 1, 0, -851991, 1, 0, -851975, 4, 0, -917498, 0, 0, -917496, 1, 0, -917495, 1, 0, -917494, 1, 0, -917493, 1, 0, -917492, 1, 0, -917491, 1, 0, -917490, 1, 0, -917489, 1, 0, -917488, 1, 0, -917487, 1, 0, -917486, 1, 0, -917485, 1, 0, -917484, 1, 0, -917483, 1, 0, -917482, 1, 0, -917481, 1, 0, -917480, 1, 0, -917479, 1, 0, -917478, 1, 0, -917477, 1, 0, -917476, 1, 0, -917475, 1, 0, -917474, 1, 0, -917473, 1, 0, -917472, 1, 0, -917471, 1, 0, -917470, 1, 0, -917469, 1, 0, -917468, 1, 0, -917467, 1, 0, -917466, 1, 0, -917465, 1, 0, -917464, 1, 0, -917463, 1, 0, -786455, 1, 0, -786439, 1, 0, -786437, 4, 0, -851935, 1, 0, -720919, 1, 0, -720911, 6, 0, -720910, 6, 0, -720909, 6, 0, -720908, 6, 0, -720907, 6, 0, -720906, 6, 0, -720905, 6, 0, -720904, 6, 0, -786432, 0, 0, -786430, 1, 0, -786429, 1, 0, -786428, 4, 0, -786399, 1, 0, -655383, 1, 0, -655362, 0, 0, -720890, 4, 0, -720863, 1, 0, -589847, 1, 0, -589829, 1, 0, -589828, 0, 0, -655355, 1, 0, -655354, 1, 0, -655353, 1, 0, -655352, 1, 0, -655351, 1, 0, -655350, 1, 0, -655349, 1, 0, -655348, 4, 0, -655327, 1, 0, -524311, 1, 0, -524310, 1, 0, -524309, 1, 0, -524308, 1, 0, -524307, 1, 0, -524306, 1, 0, -524305, 1, 0, -524304, 1, 0, -524303, 1, 0, -524302, 1, 0, -524301, 1, 0, -524300, 1, 0, -524299, 1, 0, -524298, 1, 0, -524297, 1, 0, -524296, 1, 0, -524295, 1, 0, -524294, 1, 0, -524293, 1, 0, -589810, 4, 0, -589791, 1, 0, -458777, 0, 0, -524272, 4, 0, -524255, 1, 0, -393243, 0, 0, -458734, 1, 0, -458733, 1, 0, -458732, 1, 0, -458731, 1, 0, -458730, 1, 0, -458729, 1, 0, -458728, 1, 0, -458727, 1, 0, -458726, 1, 0, -458725, 1, 0, -458724, 1, 0, -458723, 1, 0, -458722, 1, 0, -458721, 1, 0, -458720, 1, 0, -327709, 0, 0, -262175, 0, 0, -196641, 0, 0, -131107, 0, 0, -65573, 0, 0, -39, 0, 0, 65495, 0, 0, 131029, 0, 0, 196563, 0, 0, 262097, 0, 0, 327631, 0, 0, 393165, 0, 0, 458699, 0, 0 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 611.83, 49.0225 )
+
+[node name="death_menu" parent="." instance=ExtResource( 10 )]
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 2 )]
+
+[node name="Node2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( 312.519, 43.6855 )
+
+[node name="next_lvl" parent="." instance=ExtResource( 11 )]
+position = Vector2( 468.871, 131.754 )
+
+[node name="KinematicBody2D4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1248.31, -73.4895 )
+
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 340.454, 160.646 )
+
+[node name="Bird" parent="." instance=ExtResource( 5 )]
+position = Vector2( 297.171, -19.1915 )
+
+[node name="Bird2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -129.295, 74.7719 )
+
+[node name="Bird3" parent="." instance=ExtResource( 5 )]
+position = Vector2( -216.208, 124.944 )
+
+[node name="KinematicBody2D3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -241, 8 )
+scale = Vector2( 0.2, 0.3 )
+
+[node name="kolona" parent="." instance=ExtResource( 17 )]
+position = Vector2( -425, -80.25 )
+
+[node name="kolona2" parent="." instance=ExtResource( 17 )]
+position = Vector2( -632.254, -79.3061 )
+
+[node name="orex_fier" parent="." instance=ExtResource( 18 )]
+position = Vector2( 404.771, 147.298 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="leverage2" parent="." instance=ExtResource( 15 )]
+position = Vector2( -515.947, -27.571 )
+
+[node name="leverage" parent="." instance=ExtResource( 15 )]
+position = Vector2( -562.694, -28.4394 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+mix_target = 2
+bus = "fon"

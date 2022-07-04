@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://animatet/Brid/idle/eagle-attack-3.png" type="Texture" id=1]
+[ext_resource path="res://animatet/Brid/idle/eagle-attack-1.png" type="Texture" id=2]
+[ext_resource path="res://animatet/Brid/idle/eagle-attack-4.png" type="Texture" id=3]
+[ext_resource path="res://animatet/Brid/idle/eagle-attack-2.png" type="Texture" id=4]
+[ext_resource path="res://script/Bird.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.79665, 7.12225 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5.88314, 5.26819 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 7.29532, 3.50475 )
+
+[node name="Bird" type="KinematicBody2D"]
+position = Vector2( 385.455, 221.755 )
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.625, 5.96084 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -11.5291, 7.33584 )
+shape = SubResource( 3 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( -14.125, 8.125 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

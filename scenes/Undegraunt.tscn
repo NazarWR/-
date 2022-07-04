@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://audi/scott-lloyd-shelly-underground.mp3" type="AudioStream" id=1]
+
+[node name="Undegraunt" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )

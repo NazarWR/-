@@ -1,0 +1,104 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://animatet/enemy twitch/opossum-1.png" type="Texture" id=1]
+[ext_resource path="res://animatet/enemy twitch/opossum-2.png" type="Texture" id=2]
+[ext_resource path="res://animatet/enemy twitch/opossum-5.png" type="Texture" id=3]
+[ext_resource path="res://animatet/enemy twitch/opossum-4.png" type="Texture" id=4]
+[ext_resource path="res://animatet/enemy twitch/opossum-3.png" type="Texture" id=5]
+[ext_resource path="res://animatet/enemy twitch/opossum-6.png" type="Texture" id=6]
+[ext_resource path="res://enemy.gd" type="Script" id=7]
+[ext_resource path="res://animatet/enemy twitch/enemy-death-3.png" type="Texture" id=8]
+[ext_resource path="res://animatet/enemy twitch/enemy-death-1.png" type="Texture" id=9]
+[ext_resource path="res://animatet/enemy twitch/enemy-death-5.png" type="Texture" id=10]
+[ext_resource path="res://animatet/enemy twitch/enemy-death-4.png" type="Texture" id=11]
+[ext_resource path="res://animatet/enemy twitch/enemy-death-6.png" type="Texture" id=12]
+[ext_resource path="res://animatet/enemy twitch/enemy-death-2.png" type="Texture" id=13]
+[ext_resource path="res://sound/ignite-01.mp3" type="AudioStream" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "death",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 13.8597, 5.84637 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 3.52357, 24.2985 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16.926, 7.69658 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 4.58336, 1.20219 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 4.28365, 1.17988 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 7 )
+
+[node name="Anim" type="AnimatedSprite" parent="."]
+position = Vector2( -1.57157, -3.78404 )
+scale = Vector2( 1.09899, 1 )
+frames = SubResource( 1 )
+animation = "run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.93513, 3.23833 )
+shape = SubResource( 2 )
+
+[node name="RayCastV" type="RayCast2D" parent="."]
+position = Vector2( -15.5315, 5.55289 )
+enabled = true
+cast_to = Vector2( 0, 5 )
+collision_mask = 3075
+
+[node name="RayCastG" type="RayCast2D" parent="."]
+position = Vector2( -19.3874, -6.98088 )
+rotation = 1.5708
+cast_to = Vector2( 0, 10 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -5.66556, 0.484361 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="setka_kill" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="setka_kill"]
+position = Vector2( -4.31874, 2.60473 )
+shape = SubResource( 4 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( -0.198425, -13.3937 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( -11.6829, 6.60334 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2left" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 5.67605, 6.62206 )
+shape = SubResource( 6 )
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.542
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="setka_kill" to="." method="_on_setka_kill_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/звук боли2,2.mp3-8653db85bd5f559bd6dbc9fae6173827.mp3str"
+
+[deps]
+
+source_file="res://sound/лиса/звук боли2,2.mp3"
+dest_files=[ "res://.import/звук боли2,2.mp3-8653db85bd5f559bd6dbc9fae6173827.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=1.0

@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="Normal_TileMap_Trap" type="TileMap"]
+format = 1
